@@ -26,4 +26,11 @@ public class MainActivityTest {
         onView(withId(R.id.mainGoButton)).perform(click());
         onView(withId(R.id.greetingMessage)).check(matches(withText("Hello")));
     }
+
+    @Test
+    public void testCanLol() {
+        onView(withId(R.id.mainName)).perform(typeText("lol")).perform(closeSoftKeyboard());
+        onView(withId(R.id.mainGoButton)).perform(click());
+        onView(withId(R.id.greetingMessage)).check(matches(withText("lol")));
+    }
 }
